@@ -15,6 +15,20 @@
   <div class="row">
     <div class="col-xs-4 col-xs-offset-4">
       <h3>Choose a Category:</h3>
+      <form action="/" method="GET">
+        <% categories.forEach(function(cat) { %>
+        <div class="radio">
+          <label>
+            <% const checked = cat === 'dev' %>
+            <input type="radio" name="category" value="<%= cat %>" <%= checked && 'checked' %>>
+            <%= cat %>
+          </label>
+        </div>
+        <% }) %>
+        <button class="form-control btn btn-success" type="submit">
+          Get Chuck Norris Joke
+        </button>
+      </form>
     </div>
   </div>
 </body>
